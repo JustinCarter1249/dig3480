@@ -348,7 +348,7 @@ Player.prototype.moveX = function(step, level, keys) {
   this.speed.x = 0;
   if (keys.left) this.speed.x -= playerXSpeed;
   if (keys.right) this.speed.x += playerXSpeed;
-
+	console.log(playerXSpeed);
   var motion = new Vector(this.speed.x * step, 0);
   // Find out where the player character will be in this frame
   var newPos = this.pos.plus(motion);
@@ -418,7 +418,7 @@ Level.prototype.playerTouched = function(type, actor) {
     return other != actor;
 	});
 	} else if (type == "speed") {
-	var playerXSpeed = 24;
+	playerXSpeed = 20;
 	console.log(playerXSpeed);
     this.actors = this.actors.filter(function(other) {
       return other != actor;
